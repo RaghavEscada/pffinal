@@ -355,11 +355,11 @@ const Metrics = () => {
                                                 </div>
                                             </div>
                                             <p className="text-gray-300 text-xl leading-relaxed mb-8">
-                                                Make buying a business as accessible as buying a used car. Pocket Fund empowers builders and investors to acquire and grow micro digital assets with confidence, clarity, and operating leverage.
+                                                Make buying a business as accessible as buying a used car. Pocket Fund empowers builders and investors to acquire and grow micro digital assets with confidence and clarity.
                                             </p>
                                             <div className="flex items-center text-blue-400 font-semibold">
                                                 <div className="w-3 h-3 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
-                                                <span>Democratizing Digital Acquisitions</span>
+                                                <span>⁠Where Builders Become Buyers</span>
                                             </div>
                                         </div>
                                     </div>
@@ -371,8 +371,9 @@ const Metrics = () => {
                                         <div className="w-64 h-64 bg-gray-900/80 backdrop-blur-sm border border-blue-500/30 rounded-3xl flex items-center justify-center relative z-10 hover:scale-110 transition-all duration-500">
                                             <div className="text-center flex flex-col items-center">
                                                 <Target className="w-20 h-20 text-blue-400 mb-4" />
-                                                <div className="text-blue-400 font-bold text-xl">Accessible</div>
-                                                <div className="text-gray-400">Business Buying</div>
+                                                <div className="text-blue-400 font-bold text-xl">Democratizing
+</div>
+                                                <div className="text-gray-400">Digital Acquisitions</div>
                                             </div>
                                         </div>
                                     </div>
@@ -390,7 +391,7 @@ const Metrics = () => {
                                             <div className="text-center flex flex-col items-center">
                                                 <TrendingUp className="w-20 h-20 text-green-400 mb-4" />
                                                 <div className="text-green-400 font-bold text-xl">Next-Gen</div>
-                                                <div className="text-gray-400">Private Equity</div>
+                                                <div className="text-gray-400">Micro PE</div>
                                             </div>
                                         </div>
                                     </div>
@@ -412,11 +413,16 @@ const Metrics = () => {
                                                 </div>
                                             </div>
                                             <p className="text-gray-300 text-xl leading-relaxed mb-8">
-                                                Redefine private equity for a new generation — operator-led, India-powered, and globally scalable. Become the category-defining firm in the &lt;$1M digital M&A space.
+                                                Our vision is to redefine PE for the new generation, by rebuilding private equity from the ground up — one micro-acquisition at a time.
+
+                                                Our goal is to make micro private equity the most powerful wealth engine of our generation.
+
+                                           
+                                               
                                             </p>
                                             <div className="flex items-center text-green-400 font-semibold">
                                                 <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-                                                <span>Category-Defining Innovation</span>
+                                                <span> Operator-led. India-born</span>
                                             </div>
                                         </div>
                                     </div>

@@ -95,40 +95,18 @@ export const FloatingNav = ({
             </div>
 
             {/* Center Logo */}
-            <motion.div
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative"
+            <Link
+              href="/"
+              className="flex items-center justify-center w-14 h-14 rounded-xl border border-blue-200/40 shadow-lg backdrop-blur-xl bg-white/90 hover:bg-blue-50 transition-all duration-200 flex-shrink-0"
             >
-              <Link
-                href="/"
-                className="group relative flex items-center justify-center w-16 h-16 rounded-2xl border border-white/40 shadow-2xl backdrop-blur-xl bg-gradient-to-br from-white via-blue-50/30 to-white hover:from-blue-500 hover:to-blue-600 transition-all duration-300 flex-shrink-0 overflow-hidden"
-              >
-                {/* Background glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-transparent to-blue-600/10 group-hover:from-white/20 group-hover:to-white/10 transition-all duration-300" />
-
-                {/* Logo container */}
-                <div className="relative z-10 flex items-center justify-center w-full h-full">
-                  <Image
-                    src="/pflogobg.webp"
-                    alt="Pocket Fund Logo"
-                    width={32}
-                    height={32}
-                    className="object-contain h-8 w-8 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm"
-                  />
-                </div>
-
-                {/* Subtle border highlight */}
-                <div className="absolute inset-0 rounded-2xl border border-blue-200/30 group-hover:border-white/50 transition-all duration-300" />
-
-                {/* Hover shimmer effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 ease-out" />
-              </Link>
-
-              {/* Outer glow ring */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 via-blue-500/20 to-blue-600/20 blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10" />
-            </motion.div>
+              <Image
+                src="/pflogobg.webp"
+                alt="Pocket Fund Logo"
+                width={28}
+                height={28}
+                className="object-contain h-7 w-7"
+              />
+            </Link>
 
             {/* Right Navigation Items */}
             <div className="flex items-center gap-3">
