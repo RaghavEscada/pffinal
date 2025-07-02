@@ -142,7 +142,10 @@ const AvatarCard = ({ avatar }: { avatar: any }) => {
                 <div className="opacity-0 group-hover/canvas-card:opacity-100 group-hover/canvas-card:-translate-y-2 transition-all duration-300 px-4">
                     <div className="text-center mb-8">
                         <h2 className="text-white text-3xl font-bold mb-2">{avatar.title}</h2>
-                        <h3 className="text-purple-300 text-xl font-semibold mb-4">{avatar.subtitle}</h3>
+                        <h3 className="text-purple-300 text-xl font-semibold mb-2">{avatar.subtitle}</h3>
+                        {avatar.title === "Private Equity" && (
+                            <div className="text-blue-400 text-base font-semibold mb-2">The deal team you don't have to hire.</div>
+                        )}
                         <p className="text-base leading-relaxed text-gray-300">
                             {avatar.profile}
                         </p>
