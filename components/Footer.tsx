@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { navItems } from "@/data";
 
 const Footer = () => {
   const quickLinks = [
@@ -30,7 +31,7 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">PocketFund</h3>
+                <h3 className="text-2xl font-bold"> Pocket Fund</h3>
                 <p className="text-sm text-gray-400">We love deals.</p>
               </div>
             </div>
@@ -61,10 +62,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
+              {navItems.map((link, index) => (
                 <li key={index}>
                   <a
-                    href={link.href}
+                    href={link.link}
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
@@ -97,9 +98,16 @@ const Footer = () => {
               </div>
             </div>
 
-           
-</div>
-</div>
+
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mt-10 flex justify-center">
+          <p className="text-xs text-gray-500 max-w-xl text-center leading-relaxed border border-gray-800 rounded-lg px-4 py-3 bg-slate-900/80">
+            <strong>Disclaimer:</strong> Pocket Fund provides advisory and consulting services to buyers of small and mid-sized businesses. We are not a registered broker-dealer, investment adviser, or law firm, and nothing on this website constitutes legal, tax, investment, or financial advice. All content is for informational purposes only and may not be complete or up-to-date. Engagements are governed solely by executed agreements. Use of this website is at your own risk; Pocket Fund is not liable for any losses arising from reliance on the information provided.
+          </p>
+        </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">

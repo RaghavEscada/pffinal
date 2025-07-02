@@ -441,13 +441,13 @@ const Metrics = () => {
                     <div className="text-center mb-24">
                         <div className="inline-flex items-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-500/20 rounded-full px-8 py-4 mb-8 shadow-lg">
                             <Users className="w-6 h-6 text-blue-400 mr-3" />
-                            <span className="text-sm font-semibold text-blue-300 tracking-wide">THE TEAM</span>
+                            <span className="text-sm font-semibold text-blue-300 tracking-wide">People</span>
                         </div>
                         <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tight">
-                            Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500">Visionaries</span>
+                            Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500">Team</span>
                         </h2>
                         <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
-                            The brilliant minds transforming micro acquisitions into extraordinary success stories
+                            The curious minds transforming micro acquisitions.
                         </p>
                     </div>
 

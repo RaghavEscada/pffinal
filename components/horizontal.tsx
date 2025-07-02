@@ -54,7 +54,7 @@ const businessTypes = [
    
     {
         id: 7,
-        number: "07",
+        number: "04",
         title: "Community Platforms",
         description: "Forums and social networks",
         icon: Users,
@@ -65,12 +65,13 @@ const businessTypes = [
             "Professional networks"
         ],
         priceRange: "Under $500k",
-        targetMRR: "$200 - $3k"
+        targetMRR: "$2k - $30k"
     },
     {
         id: 8,
-        number: "08",
-        title: "Financial Tools",
+        number: "05",
+        title: "Fintech and business tools",
+
         description: "Fintech and business utilities",
         icon: DollarSign,
         highlights: [
@@ -79,8 +80,8 @@ const businessTypes = [
             "Business calculators",
             "Payment processors"
         ],
-        priceRange: "Under $80k",
-        targetMRR: "$500 - $10k"
+        priceRange: "Under $1M",
+        targetMRR: "$5k - $50k"
     }
 ];
 
