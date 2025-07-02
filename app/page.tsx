@@ -33,15 +33,19 @@ const Home = () => {
         <TimelineDemo />
       </div>
 
-      {/* Grid Section - About/Team */}
-
-
       {/* Main Content Sections */}
       <section className="relative w-full">
         {/* Who We Serve */}
         <div className="py-24 bg-slate-900" id="whoweserve">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <RecentProjects />
+          </div>
+        </div>
+
+        {/* Mission & Vision (now between By The Numbers and Meet the Visionaries) */}
+        <div className="py-24 bg-slate-900" id="mission-vision">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Grid />
           </div>
         </div>
 
@@ -58,8 +62,6 @@ const Home = () => {
             <Testimonial />
           </div>
         </div>
-
-
 
         {/* Calendly Embed Section */}
         <div id="contact" className="py-16 bg-slate-900 flex justify-center">
@@ -79,8 +81,6 @@ const Home = () => {
 
         {/* <TrackRecord /> */}
 
-
-       
         {/* Footer */}
         <div className="bg-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -103,8 +103,8 @@ const Testimonial = () => {
                             className="relative z-10 flex flex-col items-center text-center space-y-6 transition-all duration-500 ease-in-out"
                         >
                             {/* Quote icon */}
-                            <div className="text-blue-500/20 text-6xl font-serif leading-none">"</div>
-
+                            <div className="text-blue-500/20 text-6xl font-serif leading-none"></div>
+                        
                             {/* Testimonial text */}
                             <blockquote className="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed max-w-3xl">
                                 {description}
