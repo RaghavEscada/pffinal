@@ -41,7 +41,7 @@ export interface ContainerTextFlipProps {
 }
 
 export function ContainerTextFlip({
-  words = ["Aquisitions", "Deal Flow", "Portfolio Companies", "Strategic Roll-Ups", "Successful Exits"],
+  words = ["Acquisitions", "Deal Flow", "Portfolio Companies", "Strategic Roll-Ups", "Successful Exits"],
   interval = 2500,
   className,
   textClassName,
@@ -79,19 +79,48 @@ export function ContainerTextFlip({
   );
 }
 
-// ie Player Component - Using your exact iframe with hidden badge
+// FIXED: Responsive Lottie Player Component
 const LottiePlayer = ({ src }: { src: string }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 400, height: 400 });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (containerRef.current) {
+        const container = containerRef.current;
+        const containerWidth = container.offsetWidth;
+        // Make it responsive with proper aspect ratio
+        const size = Math.min(containerWidth, 500);
+        setDimensions({ width: size, height: size });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   return (
-    <div className="w-full h-full rounded-2xl overflow-hidden relative">
-      <iframe
-        src="https://cdn.lottielab.com/l/5Gn1jXUt1kSREm.html"
-        className="w-full h-full border-0"
-        title="Lottie Animation"
-        frameBorder="0"
-        style={{ minHeight: '380px' }}
-      />
-      {/* Precise overlay to hide only the "made with lottie" badge */}
-      <div className="absolute bottom-1 right-1 w-36 h-16 bg-white ounded-sm opacity-100"></div>
+    <div
+      ref={containerRef}
+      className="w-full flex justify-center items-center rounded-2xl overflow-hidden relative"
+    >
+      <div className="relative" style={{ width: dimensions.width, height: dimensions.height }}>
+        <iframe
+          src="https://cdn.lottielab.com/l/5Gn1jXUt1kSREm.html"
+          className="w-full h-full border-0 rounded-2xl"
+          title="Lottie Animation"
+          frameBorder="0"
+          style={{
+            minWidth: '280px',
+            minHeight: '280px',
+            maxWidth: '500px',
+            maxHeight: '500px'
+          }}
+        />
+        {/* Badge overlay - positioned more precisely */}
+        <div className="absolute bottom-2 right-2 w-32 h-12 bg-white rounded-sm opacity-100 z-10"></div>
+      </div>
     </div>
   );
 };
@@ -154,104 +183,7 @@ const DealFlowSection = () => {
         }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <AnimatedDiv className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            How We Connect
-            <span className="block text-blue-600 mt-2">Buyers & Deals</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our proprietary platform matches ambitious buyers with quality digital businesses
-          </p>
-        </AnimatedDiv>
-
-        {/* Enhanced Deal Flow Diagram */}
-        <div className="relative max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {/* Sources */}
-            <AnimatedDiv delay={100} className="text-center">
-              <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Search className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Deal Sources</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Multiple acquisition channels including brokerages, direct outreach, and exclusive networks
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Brokerages</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Direct</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Networks</span>
-                </div>
-              </div>
-            </AnimatedDiv>
-
-            {/* Pocket Fund Hub */}
-            <AnimatedDiv delay={200} className="text-center relative">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-2xl font-bold">PF</span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">Pocket Fund</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed mb-4">
-                    AI-powered matching engine with comprehensive due diligence and deal structuring
-                  </p>
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-blue-200">Active Matching</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Connection Lines */}
-              <div className="hidden md:block absolute top-1/2 -left-12 w-8 h-0.5 bg-gradient-to-r from-green-400 to-blue-500 transform -translate-y-1/2"></div>
-              <div className="hidden md:block absolute top-1/2 -right-12 w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-400 transform -translate-y-1/2"></div>
-            </AnimatedDiv>
-
-            {/* Buyers */}
-            <AnimatedDiv delay={300} className="text-center">
-              <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Qualified Buyers</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Vetted investors, entrepreneurs, and operators ready to acquire and scale businesses
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Investors</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Operators</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Entrepreneurs</span>
-                </div>
-              </div>
-            </AnimatedDiv>
-          </div>
-
-          {/* Stats Bar */}
-          <AnimatedDiv delay={400} className="mt-16 bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="text-sm text-gray-600">Active Deals</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">$2.5M</div>
-                <div className="text-sm text-gray-600">Avg Deal Size</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-purple-600 mb-2">90%</div>
-                <div className="text-sm text-gray-600">Match Success</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-orange-600 mb-2">45</div>
-                <div className="text-sm text-gray-600">Days Avg Close</div>
-              </div>
-            </div>
-          </AnimatedDiv>
-        </div>
-      </div>
+     
     </div>
   );
 };
@@ -291,58 +223,54 @@ const Hero = () => {
         .duration-600 { transition-duration: 600ms; }
       `}</style>
 
-
-
       {/* Hero Section */}
       <div className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-20">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left: Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
               {/* Badge */}
-              <AnimatedDiv className="inline-flex items-center bg-blue-100 border border-blue-200 rounded-full px-6 py-3 mb-8">
-                <Award className="w-5 h-5 text-blue-600 mr-3" />
-                <span className="text-sm font-semibold text-blue-800">First-of-its-kind Micro Private Equity Firm</span>
+              <AnimatedDiv className="inline-flex items-center bg-blue-100 border border-blue-200 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2 sm:mr-3" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-800">First-of-its-kind Micro Private Equity Firm</span>
               </AnimatedDiv>
 
               {/* Main Headline */}
               <AnimatedDiv delay={100}>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                   <span className="text-blue-600">Pocket Fund</span>
                 </h1>
               </AnimatedDiv>
 
               {/* Dynamic Subheadline - Restructured */}
-              <AnimatedDiv delay={200} className="space-y-4">
-                <div className="text-2xl md:text-3xl text-gray-700 font-medium">
+              <AnimatedDiv delay={200} className="space-y-3 sm:space-y-4">
+                <div className="text-xl sm:text-2xl md:text-3xl text-gray-700 font-medium">
                   Transforms Ideas Into
                 </div>
-                <div className="flex justify-start">
+                <div className="flex justify-center lg:justify-start">
                   <ContainerTextFlip
-                    words={["Aquisitions", "Deal Flow", "Portfolio Companies", "Strategic Roll-Ups", "Successful Exits"]}
+                    words={["Acquisitions", "Deal Flow", "Portfolio Companies", "Strategic Roll-Ups", "Successful Exits"]}
                     interval={1800}
                     animationDuration={400}
-                    className="text-3xl md:text-4xl lg:text-5xl"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                   />
                 </div>
               </AnimatedDiv>
 
               {/* Value Proposition */}
               <AnimatedDiv delay={300}>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl lg:max-w-none">
                   Pocket Fund bridges the gap between ambitious buyers and quality deals
                 </p>
               </AnimatedDiv>
 
-
-
               {/* CTA Buttons */}
               <AnimatedDiv delay={500} className="flex flex-col sm:flex-row gap-4 pt-4">
-                <a href="/#contact" className="group px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
+                <a href="/#contact" className="group px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
                   Start Your Search
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
-                <a href="/#timeline" className="group px-8 py-4 border-2 border-gray-200 text-gray-700 bg-white rounded-xl hover:border-blue-200 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2">
+                <a href="/#timeline" className="group px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-200 text-gray-700 bg-white rounded-xl hover:border-blue-200 hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2">
                   <Play className="w-5 h-5" />
                   Our Process
                 </a>
@@ -350,13 +278,11 @@ const Hero = () => {
             </div>
 
             {/* Right: Enhanced Visual */}
-            <AnimatedDiv delay={600} className="flex items-center justify-center">
-              <div className="relative w-full max-w-xl">
+            <AnimatedDiv delay={600} className="flex items-center justify-center mt-8 lg:mt-0">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-black border-white/20 bg-white/10 backdrop-blur-sm">
-                  <div className="aspect-square h-[220px] md:h-[440px] lg:h-[520px]">
-                    <LottiePlayer src="https://cdn.lottielab.com/l/5Gn1jXUt1kSREm.json" />
-                  </div>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 bg-white/10 backdrop-blur-sm">
+                  <LottiePlayer src="https://cdn.lottielab.com/l/5Gn1jXUt1kSREm.json" />
                 </div>
               </div>
             </AnimatedDiv>
@@ -369,21 +295,22 @@ const Hero = () => {
         </div>
       </div>
 
-
+      {/* Deal Flow Section */}
+      <DealFlowSection />
 
       {/* 5 Core Services Section */}
-      <div className="py-24 bg-gradient-to-b from-gray-900 to-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <AnimatedDiv className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+      <div className="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimatedDiv className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8">
               Core Services
             </h2>
-            <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
               End-to-end acquisition support from deal sourcing to exit preparation
             </p>
           </AnimatedDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: Search,
@@ -418,20 +345,20 @@ const Hero = () => {
             ].map((service, index) => (
               <AnimatedDiv
                 key={index}
-                className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 text-center hover:border-gray-600 transition-all duration-500 group hover:scale-105 hover:shadow-2xl ${index === 4 ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
+                className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8 text-center hover:border-gray-600 transition-all duration-500 group hover:scale-105 hover:shadow-2xl ${index === 4 ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
                 delay={index * 100}
                 from="opacity-0 translate-y-12"
                 to="opacity-100 translate-y-0"
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 hover:scale-110 hover:rotate-3 transition-transform duration-300 shadow-lg`}
+                  className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 hover:scale-110 hover:rotate-3 transition-transform duration-300 shadow-lg`}
                   onMouseEnter={() => setHoveredFeature(index)}
                   onMouseLeave={() => setHoveredFeature(null)}
                 >
-                  <service.icon className="w-8 h-8 text-white" />
+                  <service.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4">{service.title}</h3>
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{service.description}</p>
               </AnimatedDiv>
             ))}
           </div>
