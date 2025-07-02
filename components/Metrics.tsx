@@ -316,6 +316,117 @@ const Metrics = () => {
                 </div>
             </div>
 
+            {/* Mission & Vision */}
+            <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 mb-40">
+                <div className="max-w-8xl mx-auto">
+                    <div className="text-center mb-24">
+                        <div className="inline-flex items-center bg-gradient-to-r from-blue-500/20 to-green-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full px-8 py-4 mb-12 shadow-lg">
+                            <Target className="w-6 h-6 text-blue-400 mr-3" />
+                            <span className="text-sm font-semibold text-blue-400 tracking-wide">OUR FOUNDATION</span>
+                        </div>
+                        <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
+                            Mission &amp; <span className="text-blue-400">Vision</span>
+                        </h2>
+                        <p className="text-gray-400 text-xl max-w-3xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+                            What drives us forward and where we are headed
+                        </p>
+                    </div>
+                    {/* New Layout - Stacked with Central Divider */}
+                    <div className="max-w-7xl mx-auto relative">
+                        {/* Central Connecting Line */}
+                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-green-500/50 transform -translate-x-1/2 hidden lg:block"></div>
+                        {/* Mission Card - Left */}
+                        <div className="relative mb-16 lg:mb-32">
+                            <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                                {/* Mission Content */}
+                                <div className="lg:pr-16 mb-8 lg:mb-0">
+                                    <div className="relative bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 border border-blue-500/30 rounded-3xl p-12 overflow-hidden hover:scale-105 transition-all duration-700 group">
+                                        <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl"></div>
+                                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <div className="relative z-10">
+                                            <div className="flex items-center mb-8">
+                                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                                    <Target className="w-8 h-8 text-white" />
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-4xl font-bold text-white mb-2">Mission</h3>
+                                                    <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                                                </div>
+                                            </div>
+                                            <p className="text-gray-300 text-xl leading-relaxed mb-8">
+                                                Make buying a business as accessible as buying a used car. Pocket Fund empowers builders and investors to acquire and grow micro digital assets with confidence, clarity, and operating leverage.
+                                            </p>
+                                            <div className="flex items-center text-blue-400 font-semibold">
+                                                <div className="w-3 h-3 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
+                                                <span>Democratizing Digital Acquisitions</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Mission Visual Element */}
+                                <div className="lg:pl-16 flex justify-center lg:justify-start">
+                                    <div className="relative">
+                                        <div className="w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl absolute inset-0"></div>
+                                        <div className="w-64 h-64 bg-gray-900/80 backdrop-blur-sm border border-blue-500/30 rounded-3xl flex items-center justify-center relative z-10 hover:scale-110 transition-all duration-500">
+                                            <div className="text-center flex flex-col items-center">
+                                                <Target className="w-20 h-20 text-blue-400 mb-4" />
+                                                <div className="text-blue-400 font-bold text-xl">Accessible</div>
+                                                <div className="text-gray-400">Business Buying</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Vision Card - Right */}
+                        <div className="relative">
+                            <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                                {/* Vision Visual Element */}
+                                <div className="lg:pr-16 flex justify-center lg:justify-end order-2 lg:order-1 mb-8 lg:mb-0">
+                                    <div className="relative">
+                                        <div className="w-80 h-80 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-full blur-3xl absolute inset-0"></div>
+                                        <div className="w-64 h-64 bg-gray-900/80 backdrop-blur-sm border border-green-500/30 rounded-3xl flex items-center justify-center relative z-10 hover:scale-110 transition-all duration-500">
+                                            <div className="text-center flex flex-col items-center">
+                                                <TrendingUp className="w-20 h-20 text-green-400 mb-4" />
+                                                <div className="text-green-400 font-bold text-xl">Next-Gen</div>
+                                                <div className="text-gray-400">Private Equity</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Vision Content */}
+                                <div className="lg:pl-16 order-1 lg:order-2">
+                                    <div className="relative bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-blue-500/10 border border-green-500/30 rounded-3xl p-12 overflow-hidden hover:scale-105 transition-all duration-700 group">
+                                        <div className="absolute top-0 left-0 w-40 h-40 bg-green-500/10 rounded-full blur-2xl"></div>
+                                        <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <div className="relative z-10">
+                                            <div className="flex items-center mb-8">
+                                                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">
+                                                    <TrendingUp className="w-8 h-8 text-white" />
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-4xl font-bold text-white mb-2">Vision</h3>
+                                                    <div className="h-1 w-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
+                                                </div>
+                                            </div>
+                                            <p className="text-gray-300 text-xl leading-relaxed mb-8">
+                                                Redefine private equity for a new generation — operator-led, India-powered, and globally scalable. Become the category-defining firm in the &lt;$1M digital M&A space.
+                                            </p>
+                                            <div className="flex items-center text-green-400 font-semibold">
+                                                <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
+                                                <span>Category-Defining Innovation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Team Section */}
             <div className="py-32 px-6 md:px-12 lg:px-16 xl:px-24 bg-gradient-to-br from-slate-950 via-blue-950/30 to-slate-900 relative overflow-hidden">
                 {/* Background Effects */}
