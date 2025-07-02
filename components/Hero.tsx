@@ -401,7 +401,7 @@ const Hero = () => {
                 icon: Handshake,
                 title: "Deal Structuring & Negotiation",
                 description: "Optimal terms negotiation and transaction structure optimization",
-                color: "from-purple-500 to-purple-600"
+                color: "from-red-500 to-red-600"
               },
               {
                 icon: UserCheck,
