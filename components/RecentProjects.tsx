@@ -6,28 +6,29 @@ import { Award, CheckCircle, Target, TrendingUp, Users, Zap, BarChart3, DollarSi
 const customerAvatars = [
     {
         title: "First-Time Buyers",
-        subtitle: "Indie Acquirers",
+        subtitle: "Professionals Seeking Ownership",
         icon: "🎯",
         age: "22-35",
-        profile: "Solo operators, indie hackers, product managers seeking freedom from corporate life",
+        profile: "Consultants, tech leads, finance pros — people with cash, skills, and ambition. Stuck in golden handcuffs, they want to break free and own something real.",
         painPoints: [
-            "Unsure how to evaluate deals",
-            "Fear of buying a 'lemon'",
-            "No operational talent post-acquisition",
-            "Overwhelmed by low-quality listings"
+            "No idea how to find a legit business to buy",
+            "Afraid of overpaying or picking a lemon",
+            "Too busy to evaluate dozens of listings",
+            "No idea how to operate once they acquire",
+            "Paralyzed by risk, information, and analysis paralysis"
         ],
         solutions: [
-            "Curated off-market deal flow",
-            "Red-flag screening & negotiation",
-            "Operator placement & handholding",
-            "First-time buyer playbooks"
+            "We do the sourcing, filtering, and flagging",
+            "Full-stack diligence and negotiation support",
+            "Access to vetted operators and post-acq help",
+            "Custom playbooks for first-time buyers"
         ],
         containerColor: "bg-emerald-900",
         colors: [[34, 197, 94], [22, 163, 74]]
     },
     {
-        title: "Solo Capitalists",
-        subtitle: "Creator-Led Holdcos",
+        title: "Solo Founder",
+        subtitle: "Founder-Led Holdcos",
         icon: "🚀",
         age: "27-45",
         profile: "Builders with capital from consulting, content, or agencies seeking portfolio growth",
@@ -47,46 +48,48 @@ const customerAvatars = [
         colors: [[236, 72, 153], [219, 39, 119]]
     },
     {
-        title: "Emerging PE Funds",
-        subtitle: "Family Offices",
+        title: "Private Equity",
+        subtitle: "PE Firms, Family Offices, Search Funds with $1M-$20M AUM",
         icon: "🏛️",
-        age: "Professional",
-        profile: "$1M-$20M AUM investors comfortable with $250K-$2M deals seeking efficiency",
+        dealSize: "$250K–$2M typical deal size",
+        profile: "Smart capital doing $250K–$2M size acquisitions — without the overhead of big deal teams.",
         painPoints: [
-            "Internal teams too expensive for <$1M",
-            "Struggle finding vetted deals",
-            "Slow integration & operator placement",
-            "Need repeatable playbooks"
+            "Traditional sourcing channels are too noisy or overpriced",
+            "Internal deal teams cost too much below $5M AUM",
+            "Operational handover slows down post-close momentum",
+            "Struggling to build repeatable deal flow systems",
+            "Lack of signal vs noise in the market"
         ],
         solutions: [
-            "End-to-end sourcing & diligence",
-            "Cost-effective India-based teams",
-            "Systematized operator handover",
-            "Success-based pricing alignment"
+            "Premium off-market sourcing, fully managed by our deal team",
+            "Operator-first approach with built-in handover & accountability",
+            "Cost-effective support structure for full-funnel M&A",
+            "Customizable playbooks built for speed, scale, and execution",
+            "Aligned pricing — we only win when you do"
         ],
         containerColor: "bg-sky-600",
         colors: [[14, 165, 233], [59, 130, 246]]
     },
     {
-        title: "Indian Builders",
-        subtitle: "Young Talent",
+        title: "Indie Hackers",
+        subtitle: "Solo Acquirers",
         icon: "⚡",
         age: "18-28",
         profile: "Engineers and grads from Tier-1/2 cities eager for entrepreneurship opportunities",
         painPoints: [
-            "Traditional jobs lack growth/ownership",
-            "Don't know how to enter startups",
-            "Low pay for high-value work",
-            "Limited access to capital"
+            "Unsure how to evaluate deals",
+            "Fear of buying a 'lemon'",
+            "No operational talent post-acquisition",
+            "Overwhelmed by low-quality listings"
         ],
         solutions: [
-            "Rev-share & salary operator roles",
-            "Hands-on training & playbooks",
-            "Fast-track to digital entrepreneurship",
-            "Micro-finance PE model access"
+            "Curated off-market deal flow",
+            "Red-flag screening & negotiation",
+            "Operator placement & handholding",
+            "First-time buyer playbooks"
         ],
-        containerColor: "bg-purple-900",
-        colors: [[168, 85, 247], [147, 51, 234]]
+        containerColor: "bg-emerald-900",
+        colors: [[34, 197, 94], [22, 163, 74]]
     }
 ];
 
@@ -125,9 +128,15 @@ const AvatarCard = ({ avatar }: { avatar: any }) => {
             <div className="relative z-20 w-full">
                 <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition-all duration-300 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] min-w-40 mx-auto flex flex-col items-center justify-center">
                     <div className="text-8xl mb-6 transition-transform duration-300 group-hover/canvas-card:scale-110">{avatar.icon}</div>
-                    <div className="mt-6 px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30">
-                        <span className="text-purple-300 text-lg font-medium">Age: {avatar.age}</span>
-                    </div>
+                    {avatar.dealSize ? (
+                        <div className="mt-6 px-6 py-3 rounded-full bg-blue-500/20 border border-blue-500/30">
+                            <span className="text-blue-300 text-lg font-medium">{avatar.dealSize}</span>
+                        </div>
+                    ) : (
+                        <div className="mt-6 px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30">
+                            <span className="text-purple-300 text-lg font-medium">Age: {avatar.age}</span>
+                        </div>
+                    )}
                 </div>
 
                 <div className="opacity-0 group-hover/canvas-card:opacity-100 group-hover/canvas-card:-translate-y-2 transition-all duration-300 px-4">
