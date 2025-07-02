@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-// Removed Next.js Image import since we'll use regular img tags
 
 const testimonials = [
     {
@@ -19,13 +18,13 @@ const testimonials = [
     {
         name: "Naman",
         email: "Buyer Testimonial",
-        image: "https://ui-avatars.com/api/?name=Naman",
+        image: "/naman.png", // Changed to local image
         description: `I acquired NYC Bytes for under $5,000 with Pocket Fund's help. They guided me through every step, from finding the right business to due diligence and negotiation. The process was formal, transparent, and supportive. I now feel confident growing my new business!`
     },
     {
         name: "Marcus",
         email: "Seller Testimonial",
-        image: "https://ui-avatars.com/api/?name=Marcus",
+        image: "/marcus.png", // Changed to local image
         description: `I sold NYC Bites with Pocket Fund. The process was smooth, transparent, and trustworthy—using escrow and clear communication. Their responsiveness and professionalism made me feel comfortable every step of the way.`
     }
 ];
@@ -50,7 +49,6 @@ const Star = ({ filled }: { filled: boolean }) => (
 const Testimonial = () => {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-    // Move useEffect before any conditional returns
     useEffect(() => {
         if (!testimonials.length) return;
 
@@ -65,7 +63,6 @@ const Testimonial = () => {
         };
     }, []);
 
-    // Early return after hooks
     if (!testimonials.length) return null;
 
     const handlePrevious = () => {
@@ -106,7 +103,7 @@ const Testimonial = () => {
                             className="relative z-10 flex flex-col items-center text-center space-y-6 transition-all duration-500 ease-in-out"
                         >
                             {/* Quote icon */}
-                            <div className="text-blue-500/20 text-6xl font-serif leading-none"></div>
+                            <div className="text-blue-500/20 text-6xl font-serif leading-none">"</div>
 
                             {/* Testimonial text */}
                             <blockquote className="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed max-w-3xl">

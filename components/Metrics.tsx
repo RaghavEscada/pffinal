@@ -19,7 +19,7 @@ const Metrics = () => {
             title: "COO & Chief Analyst",
             description: "Aniket is the nerve center of Pocket Fund — managing operations, leading analysis, and keeping the entire machine running smooth. He breaks down messy businesses, finds hidden upside, and ensures every acquisition runs on rails. If Dev dreams it, Aniket makes it real (and scalable).",
             initials: "AG",
-            photo:"/aniket.jpeg",
+            photo: "/aniket.jpeg",
             color: "purple",
             skills: ["Operations", "Business Analysis", "Process Optimization"]
         },
@@ -357,9 +357,12 @@ const Metrics = () => {
                                                 <div className="relative w-32 h-32 rounded-full overflow-hidden group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                                                     <Image
 
+                                                        width={100}
+                                                        height={100}
+
                                                         src={member.photo}
                                                         alt={member.name}
-                                                        className="w-full h-full object-cover"
+
                                                     />
                                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                                     <div className={`absolute inset-0 rounded-full border-4 ${colors.border} shadow-2xl`}></div>
@@ -439,8 +442,8 @@ const Metrics = () => {
                         </div>
                     </div>
 
-    
-                   
+
+
                 </div>
 
                 {/* Floating elements */}
@@ -460,8 +463,8 @@ const Metrics = () => {
                 </div>
             </div>
 
-          
-     
+
+
         </div>
     );
 };

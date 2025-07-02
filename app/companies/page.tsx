@@ -28,19 +28,10 @@ const acquisitions = [
         subscribers: "6,000+",
         status: "Scaling"
     },
-    {
-        name: "UCAS Statement Generator",
-        logoImage: "/slash.webp",
-        description: "SaaS tool for generating UCAS statements for university applications",
-        url: "ucasstatementgenerator.com",
-        price: 3500,
-        type: "SaaS",
-        status: "Acquired",
-        technology: "EdTech"
-    },
+   
     {
         name: "Ana - AI Language Tutor",
-        logoImage: "/ana.webp",
+        logoImage: "/ava.webp",
         description: "Your personalized AI tutor to practice languages conversationally and improve speaking fluency",
         url: "anatutor.com",
         price: 5000,
@@ -65,6 +56,16 @@ const acquisitions = [
         price: 12500,
         type: "Newsletter",
         status: "Acquired"
+    },
+    {
+        name: "UCAS Statement Generator",
+        logoImage: "/bg.png",
+        description: "SaaS tool for generating UCAS statements for university applications",
+        url: "ucasstatementgenerator.com",
+        price: 3500,
+        type: "SaaS",
+        status: "Acquired",
+        technology: "EdTech"
     }
 ];
 

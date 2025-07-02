@@ -353,8 +353,8 @@ const Hero = () => {
             <AnimatedDiv delay={600} className="flex items-center justify-center">
               <div className="relative w-full max-w-xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 backdrop-blur-sm">
-                  <div className="aspect-square h-[360px] md:h-[440px] lg:h-[520px]">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-black border-white/20 bg-white/10 backdrop-blur-sm">
+                  <div className="aspect-square h-[220px] md:h-[440px] lg:h-[520px]">
                     <LottiePlayer src="https://cdn.lottielab.com/l/5Gn1jXUt1kSREm.json" />
                   </div>
                 </div>
