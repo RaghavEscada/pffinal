@@ -10,7 +10,7 @@ import Testimonial from "@/components/Testimonial";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Horizontal from "@/components/horizontal";
 import TimelineDemo from "@/components/ui/timeline";
-import Metrics from "@/components/Metrics";
+import Team from "@/components/team";
 import RecentProjects from "@/components/RecentProjects";
 
 const Home = () => {
@@ -44,9 +44,9 @@ const Home = () => {
 
 
         {/* Team */}
-        <div className="py-24 bg-slate-900" id="team">
+        <div className="py-24 bg-slate-900" id="meet-the-team">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Metrics />
+            <Team />
           </div>
         </div>
 

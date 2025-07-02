@@ -204,7 +204,7 @@ export default function BusinessTypesHorizontal() {
                                     Businesses
                                 </span>
                                 <span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-normal text-gray-400 mt-1 sm:mt-2 block">
-                                    We Acquire
+                                
                                 </span>
                             </h1>
                         </div>
