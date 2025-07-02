@@ -17,7 +17,7 @@ const Metrics = () => {
         {
             name: "Aniket Gupta",
             title: "COO & Chief Analyst",
-            description: "Aniket is the nerve center of Pocket Fund — managing operations, leading analysis, and keeping the entire machine running smooth. He breaks down messy businesses, finds hidden upside, and ensures every acquisition runs on rails. If Dev dreams it, Aniket makes it real (and scalable).",
+            description: "Aniket leads Pocket Fund’s operations and analysis — translating raw deal data into smart acquisitions. From managing analysts to building diligence frameworks, he drives every deal from messy input to clean outcome. With a bias for clarity and systems, he ensures each acquisition isn’t just closed — it’s set up to scale.",
             initials: "AG",
             photo: "/aniket.jpeg",
             color: "purple",
