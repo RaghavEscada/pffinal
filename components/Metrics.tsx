@@ -26,7 +26,7 @@ const Metrics = () => {
         {
             name: "Adarsh Ranjan",
             title: "Analyst & Sales Lead",
-            description: "Adarsh brings structure to chaos. From diving into financials to mapping out buyer personas, he is the one turning raw data into sharp insights. With a sharp mind and a steady hand, Adarsh helps power the decisions that move deals forward.",
+            description: "Adarsh leads Pocket Fund’s top-of-funnel — sourcing deal flow, qualifying sellers, and uncovering off-market opportunities. He blends sales instincts with sharp analysis, ensuring every lead we chase is a step closer to a closed deal. From pitch to pipeline, Adarsh keeps the engine running.",
             initials: "AR",
             photo: "/adarsh.jpeg",
             color: "emerald",
