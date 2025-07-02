@@ -8,7 +8,7 @@ const Metrics = () => {
         {
             name: "Dev Shah",
             title: "Founder",
-            description: "Dev is the force behind every smart acquisition at Pocket Fund. He pulls the levers on investment strategy, runs point on deal negotiations, and has a sixth sense for spotting undervalued digital assets. Equal parts operator and visionary, Dev turns bold ideas into bankable businesses.",
+            description: "Dev Shah is the founder of Pocket Fund and the engine behind every acquisition play. He leads sourcing, diligence, and negotiations with a no-fluff, operator-first mindset — focusing on underpriced assets that most investors miss. His edge? Spotting real value early, structuring smart deals, and building scalable systems for deal flow.",
             initials: "DS",
             photo: "/dev.jpg",
             color: "blue",

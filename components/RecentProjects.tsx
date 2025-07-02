@@ -144,7 +144,7 @@ const AvatarCard = ({ avatar }: { avatar: any }) => {
                         <h2 className="text-white text-3xl font-bold mb-2">{avatar.title}</h2>
                         <h3 className="text-purple-300 text-xl font-semibold mb-2">{avatar.subtitle}</h3>
                         {avatar.title === "Private Equity" && (
-                            <div className="text-blue-400 text-base font-semibold mb-2">The deal team you don't have to hire.</div>
+                            <div className="text-blue-400 text-base font-semibold mb-2">The deal team you do not have to hire.</div>
                         )}
                         <p className="text-base leading-relaxed text-gray-300">
                             {avatar.profile}
